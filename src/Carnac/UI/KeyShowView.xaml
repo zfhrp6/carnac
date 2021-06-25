@@ -497,8 +497,8 @@
                                         <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                         <Setter TargetName="icon" Property="Rectangle.Fill"
                                             Value="{StaticResource LButton}" />
-                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                     </DataTrigger>
                                     <DataTrigger Value="RButton" Binding="{Binding .}">
                                         <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -506,8 +506,8 @@
                                         <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                         <Setter TargetName="icon" Property="Rectangle.Fill"
                                         Value="{StaticResource RButton}" />
-                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                     </DataTrigger>
                                     <DataTrigger Value="MButton" Binding="{Binding .}">
                                         <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -515,8 +515,8 @@
                                         <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                         <Setter TargetName="icon" Property="Rectangle.Fill"
                                     Value="{StaticResource MButton}" />
-                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                        <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                        <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                     </DataTrigger>
                                     <DataTrigger Value="VolumeUp" Binding="{Binding .}">
                                             <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -524,8 +524,8 @@
                                             <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                             <Setter TargetName="icon" Property="Rectangle.Fill"
                                     Value="{StaticResource MWheelUp}" />
-                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                         </DataTrigger>
                                         <DataTrigger Value="VolumeDown" Binding="{Binding .}">
                                             <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -533,8 +533,8 @@
                                             <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                             <Setter TargetName="icon" Property="Rectangle.Fill"
                                     Value="{StaticResource MWheelDown}" />
-                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                         </DataTrigger>
                                         <DataTrigger Value="XButton1" Binding="{Binding .}">
                                             <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -542,8 +542,8 @@
                                             <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                             <Setter TargetName="icon" Property="Rectangle.Fill"
                                     Value="{StaticResource XButton1}" />
-                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                         </DataTrigger>
                                         <DataTrigger Value="XButton2" Binding="{Binding .}">
                                             <Setter TargetName="regular" Property="Control.Visibility" Value="Collapsed" />
@@ -551,8 +551,8 @@
                                             <Setter TargetName="KeyCap" Property="Control.Visibility" Value="Collapsed" />
                                             <Setter TargetName="icon" Property="Rectangle.Fill"
                                     Value="{StaticResource XButton2}" />
-                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="100" />
-                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="100" />
+                                            <Setter TargetName="icon" Property="Rectangle.Width" Value="50" />
+                                            <Setter TargetName="icon" Property="Rectangle.Height" Value="50" />
                                         </DataTrigger>
                                     </DataTemplate.Triggers>
                             </DataTemplate>
