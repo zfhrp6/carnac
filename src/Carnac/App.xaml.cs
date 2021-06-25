@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Reactive.Linq;
 using System.Windows;
 using Carnac.Logic;
@@ -27,14 +28,15 @@ namespace Carnac
 
         public App()
         {
-            var keyProvider = new KeyProvider(InterceptKeys.Current, new PasswordModeService(), new DesktopLockEventService());
             settingsProvider = new SettingsProvider(new RoamingAppDataStorage("Carnac"));
             settings = settingsProvider.GetSettings<PopupSettings>();
+            var keyProvider = new KeyProvider(InterceptKeys.Current, new PasswordModeService(), new DesktopLockEventService(), settingsProvider);
             messageProvider = new MessageProvider(new ShortcutProvider(), keyProvider, settings);
         }
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
             // Check if there was instance before this. If there was-close the current one.  
             if (ProcessUtilities.ThisProcessIsAlreadyRunning())
             {
@@ -53,22 +55,25 @@ namespace Carnac
             carnac.Start();
 
 #if !DEBUG
-            Observable
-                .Timer(TimeSpan.FromMinutes(5))
-                .Subscribe(async x =>
-                {
-                    try
+            if (settings.AutoUpdate)
+            {
+                Observable
+                    .Timer(TimeSpan.FromMinutes(5))
+                    .Subscribe(async x =>
                     {
-                        using (var mgr = UpdateManager.GitHubUpdateManager(carnacUpdateUrl))
+                        try
                         {
-                            await mgr.Result.UpdateApp();
+                            using (var mgr = UpdateManager.GitHubUpdateManager(carnacUpdateUrl))
+                            {
+                                await mgr.Result.UpdateApp();
+                            }
                         }
-        }
-                    catch
-                    {
-                        // Do something useful with the exception
-                    }
-                });
+                        catch
+                        {
+                            // Do something useful with the exception
+                        }
+                    });
+            }
 #endif
 
             base.OnStartup(e);
@@ -78,6 +83,7 @@ namespace Carnac
         {
             trayIcon.Dispose();
             carnac.Dispose();
+            keyShowView.Dispose();
             ProcessUtilities.DestroyMutex();
 
             base.OnExit(e);
